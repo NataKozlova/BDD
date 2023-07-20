@@ -1,0 +1,1 @@
+Project Sample [![Build status](https://ci.appveyor.com/api/projects/status/clo9uux9cwbou6s3?svg=true)](https://ci.appveyor.com/project/NataKozlova/bdd)
