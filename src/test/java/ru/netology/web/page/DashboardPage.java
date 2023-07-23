@@ -2,8 +2,6 @@ package ru.netology.web.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Assertions;
-import ru.netology.web.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,13 +18,14 @@ public class DashboardPage {
         heading.shouldBe(visible);
     }
 
-    public BalancePage increaseFirstCard(DataHelper.TransferMoney transferMoney) {
+    public BalancePage fillFirstCard() {
         cards.first().$("[data-test-id='action-deposit']").click();
-        return new BalancePage(transferMoney.getBalance());
+        return new BalancePage();
     }
 
-    public void validateFirstBalance(int shouldBeBalance) {
-        Assertions.assertEquals(shouldBeBalance, getFirstCardBalance());
+    public BalancePage fillSecondCard() {
+        cards.get(1).$("[data-test-id='action-deposit']").click();
+        return new BalancePage();
     }
 
     public int getFirstCardBalance() {
